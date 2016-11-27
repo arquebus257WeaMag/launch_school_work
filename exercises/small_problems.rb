@@ -129,7 +129,7 @@
 # end
 # print "Enter the last number: "
 # last = gets.chomp.to_i
-# answer = nums.include?(last) ? 'appears' : 'does not appear' 
+# answer = nums.include?(last) ? 'appears' : 'does not appear'
 # puts "The number #{last} #{answer} in #{nums}"
 
 
@@ -186,17 +186,28 @@
 # p xor?(5.even?, 4.odd?) == false
 
 
-def oddities(a)
-  result=[]
-  while a.size > 0
-    count=0
-    result << a[count]
-    count += 1
-  end
+# def oddities(a)
+#   count=0
+#   result=[]
+#   while a.size > count
+#     result << a[count]
+#     count += 2
+#   end
+#   result
+# end
+
+# p oddities([2, 3, 4, 5, 6]) == [2, 4, 6]
+# p oddities(['abc', 'def']) == ['abc']
+# p oddities([123]) == [123]
+# p oddities([]) == []
+
+
+def palindrome?(str)
+  str.reverse == str
 end
 
-oddities([2, 3, 4, 5, 6]) == [2, 4, 6]
-oddities(['abc', 'def']) == ['abc']
-oddities([123]) == [123]
-oddities([]) == []
 
+p palindrome?('madam') == true
+p palindrome?('Madam') == false          # (case matters)
+p palindrome?("madam i'm adam") == false # (all characters matter)
+p palindrome?('356653') == true
