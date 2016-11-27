@@ -87,14 +87,116 @@
 # You have only #{years} years of work to go!"
 
 
-print "What is your name? "
-name = gets.chomp
+# print "What is your name? "
+# name = gets.chomp
 
-if name[-1] == '!'
-  name.delete!('!')
-  puts "HELLO #{name.upcase}. WHY ARE WE SCREAMING?"
-else
-  puts "Hello #{name}"
+# if name[-1] == '!'
+#   name.delete!('!')
+#   puts "HELLO #{name.upcase}. WHY ARE WE SCREAMING?"
+# else
+#   puts "Hello #{name}"
+# end
+
+
+# (1..99).each{|a| puts a if a%2==1}
+# (1..99).each{|a| puts a if a%2==0}
+
+
+
+# print ">> Please enter an integer greater than 0: "
+# num = gets.chomp.to_i
+# print "Enter 's' to compute the sum, 'p' to compute the product. "
+# comp = gets.chomp
+
+# result=0
+# if comp == 's'
+#   result = (1..num).reduce(:+)
+#   puts "The sum of the integers between 1 and #{num} is #{result}."
+# elsif comp == 'p'
+#   result = (1..num).reduce(:*)
+#   puts "The product of the integers between 1 and #{num} is #{result}."
+# else
+#   puts "wrong input"
+# end
+
+
+
+# a=%w[1st 2nd 3rd 4th 5th]
+# nums=[]
+# a.each do |b|
+#   print "Enter the #{b} number: "
+#   nums << gets.chomp.to_i
+# end
+# print "Enter the last number: "
+# last = gets.chomp.to_i
+# answer = nums.include?(last) ? 'appears' : 'does not appear' 
+# puts "The number #{last} #{answer} in #{nums}"
+
+
+
+
+# print "Enter the first number: "
+# a = gets.chomp.to_i
+# print "Enter the second number: "
+# b = gets.chomp.to_i
+
+# mod = a % b
+# exp = a ** b
+# plus = a + b
+# puts "#{a} + #{b} = #{plus}"
+# puts "#{a} mod #{b} = #{mod}"
+# puts "#{a} to the #{b} power = #{exp}"
+
+
+
+# print "Please write a word or multiple words: "
+# input = gets.chomp
+
+# result=0
+# a = input.split(' ')
+# a.each do |b|
+#   result += b.size
+# end
+# puts "There are #{result} characters in #{input}"
+
+
+
+
+# def multiply(a,b)
+#   a*b
+# end
+# # p multiply(5, 3) == 15
+
+
+# def square(a)
+#   multiply(a,a)
+# end
+
+# p square(5) == 25
+# p square(-8) == 64
+
+
+# def xor?(a,b)
+#   a != b
+# end
+
+# p xor?(5.even?, 4.even?) == true
+# p xor?(5.odd?, 4.odd?) == true
+# p xor?(5.odd?, 4.even?) == false
+# p xor?(5.even?, 4.odd?) == false
+
+
+def oddities(a)
+  result=[]
+  while a.size > 0
+    count=0
+    result << a[count]
+    count += 1
+  end
 end
 
+oddities([2, 3, 4, 5, 6]) == [2, 4, 6]
+oddities(['abc', 'def']) == ['abc']
+oddities([123]) == [123]
+oddities([]) == []
 
