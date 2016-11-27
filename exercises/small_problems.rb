@@ -347,17 +347,18 @@ end
 
 
 def running_total(arr)
-  total=0
+  if arr.empty? then return [] end
+  total=arr[0]
   result = [arr[0]]
-  arr[1..-2].each_index do |a|
-    total = total + arr[a]
-    result << total 
+  arr[1..-1].each do |a|
+    total = total + a
+    result << total
   end
   result
 end
 
 
-p running_total([2, 5, 13]) #== [2, 7, 20]
-p running_total([14, 11, 7, 15, 20]) #== [14, 25, 32, 47, 67]
-p running_total([3]) #== [3]
+p running_total([2, 5, 13]) == [2, 7, 20]
+p running_total([14, 11, 7, 15, 20]) == [14, 25, 32, 47, 67]
+p running_total([3]) == [3]
 p running_total([]) == []
