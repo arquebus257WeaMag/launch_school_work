@@ -202,12 +202,162 @@
 # p oddities([]) == []
 
 
-def palindrome?(str)
-  str.reverse == str
+def palindromic_number?(str)
+  a = str.to_s.downcase.delete("^a-z0-9")
+  a.reverse == a
 end
 
 
-p palindrome?('madam') == true
-p palindrome?('Madam') == false          # (case matters)
-p palindrome?("madam i'm adam") == false # (all characters matter)
-p palindrome?('356653') == true
+# p palindrome?('madam') == true
+# p palindrome?('Madam') == false          # (case matters)
+# p palindrome?("madam i'm adam") == false # (all characters matter)
+# p palindrome?('356653') == true
+
+# p real_palindrome?('madam') == true
+# p real_palindrome?('Madam') == true           # (case does not matter)
+# p real_palindrome?("Madam, I'm Adam") == true # (only alphanumerics matter)
+# p real_palindrome?('356653') == true
+# p real_palindrome?('356a653') == true
+# p real_palindrome?('123ab321') == false
+
+# p palindromic_number?(34543) == true
+# p palindromic_number?(123210) == false
+# p palindromic_number?(22) == true
+# p palindromic_number?(5) == true
+
+
+
+
+# def short_long_short(a,b)
+#   l=s=''
+#   if a.size > b.size
+#     b+a+b
+#   else
+#     a+b+a
+#   end
+# end
+# p short_long_short('abc', 'defgh') == "abcdefghabc"
+# p short_long_short('abcde', 'fgh') == "fghabcdefgh"
+# p short_long_short('', 'xyz') == "xyz"
+
+
+
+
+# def century(year)
+#   sufx='';yr=0
+#   year -= 1
+#   yr = (year / 100) + 1
+#   dig = (yr % 100)
+#   if dig > 20 then dig = dig % 10 end
+#   sufx = case dig
+#   when 0,4..20
+#     'th'
+#   when 2
+#     'nd'
+#   when 3
+#     'rd'
+#   when 1
+#     'st'
+#   else
+#     'ho'
+#   end
+#   yr.to_s + sufx
+# end
+
+# p century(2000) == '20th'
+# p century(2001) == '21st'
+# p century(1965) == '20th'
+# p century(256) == '3rd'
+# p century(5) == '1st'
+# p century(10103) == '102nd'
+# p century(1052) == '11th'
+# p century(1127) == '12th'
+# p century(11201) == '113th'
+
+
+
+# def leap_year?(yr)
+#   leap=false
+#   if yr % 4 == 0
+#     leap = true
+#     if yr % 100 == 0
+#       leap = false
+#       if yr % 400 == 0
+#         leap = true
+#       end
+#     end
+#   end
+#   leap
+# end
+
+# p leap_year?(4000)
+# p leap_year?(2016) == true
+# p leap_year?(2015) == false
+# p leap_year?(2100) == false
+# p leap_year?(2400) == true
+# p leap_year?(240000) == true
+# p leap_year?(240001) == false
+# p leap_year?(2000) == true
+# p leap_year?(1900) == false
+# p leap_year?(1700) == false
+# p leap_year?(1) == false
+# p leap_year?(100) == false
+# p leap_year?(400) == true
+
+
+
+# def leap_year?(year)
+#   if year < 1752
+#     year % 4 == 0
+#   else
+#     (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)
+#   end
+# end
+
+# p leap_year?(2016) == true
+# p leap_year?(2015) == false
+# p leap_year?(2100) == false
+# p leap_year?(2400) == true
+# p leap_year?(240000) == true
+# p leap_year?(240001) == false
+# p leap_year?(2000) == true
+# p leap_year?(1900) == false
+# p leap_year?(1752) == true
+# p leap_year?(1700) == true
+# p leap_year?(1) == false
+# p leap_year?(100) == true
+# p leap_year?(400) == true
+
+
+
+
+# def multisum(a)
+#   arr = (1..a).select do |b|
+#     b % 3 == 0 || b % 5 == 0
+#   end
+#   result = arr.reduce(:+)
+# end
+
+
+# p multisum(3) == 3
+# p multisum(5) == 8
+# p multisum(10) == 33
+# p multisum(1000) == 234168
+
+
+
+def running_total(arr)
+  total=0
+  result = [arr[0]]
+  arr[1..-2].each_index do |a|
+    total = total + arr[a]
+    result << total 
+  end
+  result
+end
+
+
+p running_total([2, 5, 13]) #== [2, 7, 20]
+p running_total([14, 11, 7, 15, 20]) #== [14, 25, 32, 47, 67]
+p running_total([3]) #== [3]
+p running_total([]) == []
