@@ -346,19 +346,44 @@ end
 
 
 
-def running_total(arr)
-  if arr.empty? then return [] end
-  total=arr[0]
-  result = [arr[0]]
-  arr[1..-1].each do |a|
-    total = total + a
-    result << total
+# def running_total(arr)
+#   if arr.empty? then return [] end
+#   total=arr[0]
+#   result = [arr[0]]
+#   arr[1..-1].each do |a|
+#     total = total + a
+#     result << total
+#   end
+#   result
+# end
+
+
+# p running_total([2, 5, 13]) == [2, 7, 20]
+# p running_total([14, 11, 7, 15, 20]) == [14, 25, 32, 47, 67]
+# p running_total([3]) == [3]
+# p running_total([]) == []
+
+# Convert a String to a Number!
+
+def string_to_integer(str)
+  str_size = str.size
+  num_str = '0123456789'
+  curr_size = 1
+  str_size.times{curr_size *= 10}
+  result = 0
+  pos = 0
+
+  arr = str.split('')
+
+  arr.each do |a|
+    pos = num_str.index(a)
+    add_up = pos * curr_size
+    result += add_up
+    curr_size /= 10
   end
-  result
+  result /= 10
 end
 
+p string_to_integer('4321') == 4321
+p string_to_integer('570') == 570
 
-p running_total([2, 5, 13]) == [2, 7, 20]
-p running_total([14, 11, 7, 15, 20]) == [14, 25, 32, 47, 67]
-p running_total([3]) == [3]
-p running_total([]) == []
