@@ -262,26 +262,67 @@
 
 
 
-def print_in_box(str)
-  len = str.size
-  print '+-'
-  len.times{print '-'}
-  puts '-+'
-  print '| '
-  len.times{print ' '}
-  puts ' |'
-  print '| '
-  print str
-  puts ' |'
-  print '| '
-  len.times{print ' '}
-  puts ' |'
-  print '+-'
-  len.times{print '-'}
-  puts '-+'
+# def print_in_box(str)
+#   len = str.size
+#   print '+-'
+#   len.times{print '-'}
+#   puts '-+'
+#   print '| '
+#   len.times{print ' '}
+#   puts ' |'
+#   print '| '
+#   print str
+#   puts ' |'
+#   print '| '
+#   len.times{print ' '}
+#   puts ' |'
+#   print '+-'
+#   len.times{print '-'}
+#   puts '-+'
+# end
+
+# print_in_box('To boldly go where no one has gone before.')
+# print_in_box('')
+
+
+
+
+
+# def dms(num)
+#   int = num.to_i
+#   dec = num % 1
+#   min_frac = dec * 60
+#   min = min_frac.to_i
+#   sec_dec = min_frac % 1
+#   sec = sec_dec * 60
+#   sec = sec.to_i
+#     %(#{int}#deg#{'%02d' % min}'#{'%02d' % sec}")
+# end
+
+
+#   p dms(30) == %(30#deg00'00")
+#   p dms(76.73) == %(76#deg43'48")
+#   p dms(254.6) == %(254#deg36'00") # rounding problem, not going to fix
+#   p dms(93.034773) == %(93#deg02'05")
+#   p dms(0) == %(0#deg00'00")
+#   p dms(360) == %(360#deg00'00") || dms(360) == %(0#deg00'00")
+
+
+
+
+
+def remove_vowels(arr)
+  vowels=%w[a e i o u A E I O U]
+  res = arr.join(' ')
+  vowels.each do |a|
+    res = res.delete(a)
+  end
+  res = res.split(' ')
+  res
 end
 
-print_in_box('To boldly go where no one has gone before.')
-print_in_box('')
 
 
+p remove_vowels(%w(abcdefghijklmnopqrstuvwxyz)) == %w(bcdfghjklmnpqrstvwxyz)
+p remove_vowels(%w(green YELLOW black white)) == %w(grn YLLW blck wht)
+p remove_vowels(%w(ABC AEIOU XYZ)) == ['BC', '', 'XYZ']
