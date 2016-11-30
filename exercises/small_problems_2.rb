@@ -104,27 +104,134 @@
 
 
 
-def substrings(str)
-  str_size = str.size
-  res_arr=[]
+# def substrings(str)
+#   str_size = str.size
+#   res_arr=[]
 
-  str_size.times do |a|
-    n = a
-    loop do
-      res_arr << str[a..n]
-      n += 1
-      break unless n < str_size
-    end
-  end
-  res_arr
+#   str_size.times do |a|
+#     n = a
+#     loop do
+#       res_arr << str[a..n]
+#       n += 1
+#       break unless n < str_size
+#     end
+#   end
+#   res_arr
+# end
+
+
+
+# p substrings('abcde') == [
+#   'a', 'ab', 'abc', 'abcd', 'abcde',
+#   'b', 'bc', 'bcd', 'bcde',
+#   'c', 'cd', 'cde',
+#   'd', 'de',
+#   'e'
+# ]
+
+
+# def pdrm(str)
+#   str if str.reverse == str
+# end
+
+
+# def palindromes(str)
+#   res_arr=[]
+#   n=1
+#   b=''
+
+#   str.size.times do |a|
+#     n=a+1
+#     loop do
+#       break unless n<str.size
+#       if b = pdrm(str[a..n]) then res_arr << b end
+#       n+=1
+#     end
+#   end
+#   res_arr
+# end
+
+# frak optimize looping
+
+# extra credit - ignore non-alpha and case
+
+# p palindromes('abcd') == []
+# p palindromes('madam') == ['madam', 'ada']
+# p palindromes('hello-madam-did-madam-goodbye') == [
+#   'll', '-madam-', '-madam-did-madam-', 'madam', 'madam-did-madam', 'ada',
+#   'adam-did-mada', 'dam-did-mad', 'am-did-ma', 'm-did-m', '-did-', 'did',
+#   '-madam-', 'madam', 'ada', 'oo'
+# ]
+# p palindromes('knitting cassettes') == [
+#   'nittin', 'itti', 'tt', 'ss', 'settes', 'ette', 'tt'
+# ]
+
+
+
+# def fizzbuzz(start,fin)
+#   (start..fin).each do |a|
+#     case
+#     when a % 3 == 0 && a % 5 == 0; print 'FizzBuzz '
+#     when a % 3 == 0; print 'Fizz '
+#     when a % 5 == 0; print 'Buzz '
+#     else print "#{a} "
+#     end
+#   end
+# end
+
+
+# fizzbuzz(1, 15) # -> 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz
+
+
+
+
+# def repeater(str)
+#   res=''
+#   str.chars.each do |a|
+#     res += a + a
+#   end
+#   res
+# end
+
+
+# p repeater('Hello') == "HHeelllloo"
+# p repeater("Good job!") == "GGoooodd  jjoobb!!"
+# p repeater('') == ''
+
+
+
+
+# def double_consonants(str)
+#   cons = ('A'..'Z')
+#   res=''
+#   str.each_char do |a|
+#     if /[a-zA-Z&&[^aeiouAEIOU]]/.match(a)
+#       res << a << a
+#     else
+#       res << a
+#     end
+#   end
+#   res
+# end
+
+
+# p double_consonants('String') == "SSttrrinngg"
+# p double_consonants("Hello-World!") == "HHellllo-WWorrlldd!"
+# p double_consonants("July 4th") == "JJullyy 4tthh"
+# p double_consonants('') == ""
+
+
+
+
+def reversed_number(num)
+  str = num.to_s
+  arr = str.split
+
 end
 
 
-
-p substrings('abcde') == [
-  'a', 'ab', 'abc', 'abcd', 'abcde',
-  'b', 'bc', 'bcd', 'bcde',
-  'c', 'cd', 'cde',
-  'd', 'de',
-  'e'
-]
+reversed_number(12345) == 54321
+reversed_number(12213) == 31221
+reversed_number(456) == 654
+reversed_number(12000) == 21 # Note that zeros get dropped!
+reversed_number(1) == 1
