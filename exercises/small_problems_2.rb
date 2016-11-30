@@ -223,15 +223,222 @@
 
 
 
-def reversed_number(num)
-  str = num.to_s
-  arr = str.split
+# def reversed_number(num)
+#   str = num.to_s
+#   arr = str.split('')
+#   arr = arr.reverse!.join.to_i
+# end
 
-end
+
+# p reversed_number(12345) == 54321
+# p reversed_number(12213) == 31221
+# p reversed_number(456) == 654
+# p reversed_number(12000) == 21 # Note that zeros get dropped!
+# p reversed_number(1) == 1
 
 
-reversed_number(12345) == 54321
-reversed_number(12213) == 31221
-reversed_number(456) == 654
-reversed_number(12000) == 21 # Note that zeros get dropped!
-reversed_number(1) == 1
+
+
+
+# def center_of(str)
+#   s = str.size / 2
+#   if str.size % 2 == 0
+#     str[s-1,2]
+#   else
+#     str[s]
+#   end
+# end
+
+# p center_of('ada')
+# p center_of('good')
+
+# p center_of('I love ruby') == 'e'
+# p center_of('Launch School') == ' '
+# p center_of('Launch') == 'un'
+# p center_of('Launchschool') == 'hs'
+# p center_of('x') == 'x'
+
+
+
+
+# def greetings(arr,hsh)
+#   "Hello, #{arr[0]} #{arr[1]} #{arr[2]}! Nice to have a #{hsh[:title]} #{hsh[:occupation]} around."
+# end
+
+
+# p greetings(['John', 'Q', 'Doe'], { title: 'Master', occupation: 'Plumber' }) == "Hello, John Q Doe! Nice to have a Master Plumber around."
+
+
+
+
+# def twice(num)
+#   arr = num.to_s
+#   half = arr.size / 2 + arr.size % 2
+#   front = arr[0..half-1]
+#   #p "f #{front}"
+#   back = arr[half..-1]
+#   #p "b #{back}"
+#   if front == back
+#     num
+#   else
+#     num.to_i * 2
+#   end
+# end
+
+
+# p twice(37) == 74
+# p twice(44) == 44
+# p twice(334433) == 668866
+# p twice(444) == 888
+# p twice(107) == 214
+# p twice(103103) == 103103
+# p twice(3333) == 3333
+# p twice(7676) == 7676
+# p twice(123_456_789_123_456_789) == 123_456_789_123_456_789
+# p twice(5) == 10
+
+
+
+
+
+# def negative(num)
+#   if num > 0
+#     -num
+#   else
+#     num
+#   end
+# end
+
+
+# p negative(5) == -5
+# p negative(-3) == -3
+# p negative(0) == 0      # There's no such thing as -0 in ruby
+
+
+
+
+
+# def sequence(num)
+#   res_arr=[]
+#   num.times do |a|
+#     res_arr << a+1
+#   end
+#   res_arr
+# end
+
+# def sequence(num)
+#   (1..num).to_a
+# end
+
+# p sequence(5) == [1, 2, 3, 4, 5]
+# p sequence(3) == [1, 2, 3]
+# p sequence(1) == [1]
+
+
+
+
+
+
+# def uppercase?(str)
+#   str.each_char do |c|
+#     return false if (/[a-z]/).match(c)
+#   end
+#   true
+# end
+
+
+# p uppercase?('t') == false
+# p uppercase?('T') == true
+# p uppercase?('Four Score') == false
+# p uppercase?('FOUR SCORE') == true
+# p uppercase?('4SCORE!') == true
+# p uppercase?('') == true
+
+
+
+
+
+# def word_lengths(str)
+#   arr = str.split(' ')
+#   res=arr.map do |w|
+#     "#{w} #{w.size}"
+#   end
+# end
+
+
+
+# p word_lengths("cow sheep chicken") == ["cow 3", "sheep 5", "chicken 7"]
+
+# p word_lengths("baseball hot dogs and apple pie") ==
+#   ["baseball 8", "hot 3", "dogs 4", "and 3", "apple 5", "pie 3"]
+
+# p word_lengths("It ain't easy, is it?") == ["It 2", "ain't 5", "easy, 5", "is 2", "it? 3"]
+
+# p word_lengths("Supercalifragilisticexpialidocious") ==
+#   ["Supercalifragilisticexpialidocious 34"]
+
+# p word_lengths("") == []
+
+
+
+
+
+# def swap_name(str)
+#   str_arr = str.split(' ')
+#   "#{str_arr[1]}, #{str_arr[0]}"
+# end
+
+# p swap_name('Joe Roberts') == 'Roberts, Joe'
+
+
+
+
+# def sequence(count,iter_val)
+#   res_arr=[iter_val]
+#   curr_sum=iter_val
+#   (count-1).times do
+#     res_arr << curr_sum += iter_val
+#   end
+#   count == 0 ? [] : res_arr
+# end
+
+# p sequence(5, 1) == [1, 2, 3, 4, 5]
+# p sequence(4, -7) == [-7, -14, -21, -28]
+# p sequence(3, 0) == [0, 0, 0]
+# p sequence(0, 1000000) == []
+
+
+
+
+
+# def get_grade(a,b,c)
+#   grade = (a+b+c)/3
+
+# 	case grade
+# 	when 90..100 ; 'A'
+# 	when 80..89 ; 'B'
+# 	when 70..79 ; 'C'
+# 	when 60..69 ; 'D'
+# 	when 0..60 ; 'F'
+# 	end
+# end
+
+# p get_grade(95, 90, 93) == "A"
+# p get_grade(50, 50, 95) == "D"
+
+
+
+
+# def buy_fruit(arr)
+#   res_str=[]
+#   arr.each do |a|
+#     (a[1]).times do
+#       res_str << a[0]
+#     end
+#   end
+#   res_str
+# end
+
+
+# p buy_fruit([["apples", 3], ["orange", 1], ["bananas", 2]]) ==
+#   ["apples", "apples", "apples", "orange", "bananas","bananas"]
