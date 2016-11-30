@@ -530,3 +530,192 @@
 # p include?([], 3) == false
 # p include?([nil], nil) == true
 # p include?([], nil) == false
+
+
+
+# def triangle(num)
+#   space_inc = num - 2
+
+#   num.times do
+#     num.times do |col|
+#       if space_inc < col
+#         print '*'
+#       else
+#         print ' '
+#       end
+#     end
+#     puts
+#     space_inc -= 1
+#   end
+# end
+
+# triangle(5)
+# triangle(9)
+
+
+
+
+
+# def interleave(a,b)
+#   res=[]
+#   a.each_index do |i|
+#     res << a[i]
+#     res << b[i]
+#   end
+#   res
+# end
+
+# p interleave([1, 2, 3], ['a', 'b', 'c']) == [1, 'a', 2, 'b', 3, 'c']
+
+
+
+# def letter_case_count(str)
+#   lc = uc = nr = 0
+#   str.chars.each do |a|
+#     if ('a'..'z').include?(a)
+#       lc += 1
+#     elsif ('A'..'Z').include?(a)
+#       uc += 1
+#     else
+#       nr += 1
+#     end
+#   end
+#   { lowercase: lc, uppercase: uc, neither: nr }
+# end
+
+# p letter_case_count('abCdef 123') == { lowercase: 5, uppercase: 1, neither: 4 }
+# p letter_case_count('AbCd +Ef') == { lowercase: 3, uppercase: 3, neither: 2 }
+# p letter_case_count('123') == { lowercase: 0, uppercase: 0, neither: 3 }
+# p letter_case_count('') == { lowercase: 0, uppercase: 0, neither: 0 }
+
+
+
+
+# def word_cap(str)
+#   res = str.split(' ')
+#   result = res.map do |a|
+#     a.capitalize
+#   end
+#   result.join(' ')
+# end
+
+# p word_cap('four score and seven') == 'Four Score And Seven'
+# p word_cap('the javaScript language') == 'The Javascript Language'
+# p word_cap('this is a "quoted" word') == 'This Is A "quoted" Word'
+
+
+
+# def swapcase(str)
+#   res=''
+#   str.chars.each do |a|
+#     if ('a'..'z').include?(a)
+#       res += a.upcase
+#     elsif('A'..'Z').include?(a)
+#       res += a.downcase
+#     else
+#       res += a
+#     end
+#   end
+#   res
+# end
+
+
+# p swapcase('CamelCase') == 'cAMELcASE'
+# p swapcase('Tonight on XYZ-TV') == 'tONIGHT ON xyz-tv'
+
+
+
+
+# def staggered_case(str)
+#   switch=true
+#   count=0
+#   res=''
+#   str.size.times do
+#     if ('a'..'z').include?(str[count]) || ('A'..'Z').include?(str[count])
+#       if switch
+#         res += str[count].upcase
+#         switch = false
+#       else
+#         res += str[count].downcase
+#         switch = true
+#       end
+#     else
+#       res += str[count]
+#       #switch ? switch=false : switch=true
+#     end
+#     count += 1
+#   end
+#   res
+# end
+
+
+
+# p staggered_case('I Love Launch School!') == 'I LoVe lAuNcH ScHoOl!'
+# p staggered_case('ALL_CAPS') == 'AlL_CaPs'
+# p staggered_case('ignore 77 the 444 numbers') == 'IgNoRe 77 ThE 444 NuMbErS'
+
+
+# p staggered_case('I Love Launch School!') == 'I lOvE lAuNcH sChOoL!'
+# p staggered_case('ALL CAPS') == 'AlL cApS'
+# p staggered_case('ignore 77 the 444 numbers') == 'IgNoRe 77 ThE 444 nUmBeRs'
+
+
+
+
+# def show_multiplicative_average(arr)
+#   result = 1
+#   arr.each do |a|
+#     result *= a
+#   end
+#   answer = result.to_f / arr.size.to_f
+#   "The result is #{"%.3f" % answer}"
+# end
+
+
+# p show_multiplicative_average([3, 5])
+# #The result is 7.500
+
+# p show_multiplicative_average([2, 5, 7, 11, 13, 17])
+# #The result is 28361.667
+
+
+
+# def multiply_list(a,b)
+#   n=-1
+#   res = a.map do
+#     n+=1
+#     a[n] * b[n]
+#   end
+#   res
+# end
+
+
+# p multiply_list([3, 5, 7], [9, 10, 11]) == [27, 50, 77]
+
+
+
+
+
+# def multiply_all_pairs(a,b)
+#   res=[]
+#   a.each do |n|
+#     b.each do |x|
+#       res << n * x
+#     end
+#   end
+#   res.sort
+# end
+
+
+# p multiply_all_pairs([2, 4], [4, 3, 1, 2]) == [2, 4, 4, 6, 8, 8, 12, 16]
+
+
+
+
+
+def penultimate(str)
+  str.split(' ')[-2]
+end
+
+p penultimate('last word') == 'last'
+p penultimate('Launch School is great!') == 'is'
