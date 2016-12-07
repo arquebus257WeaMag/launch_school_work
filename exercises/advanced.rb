@@ -107,9 +107,10 @@ def rotate90(mtx)
   count = arr_size-1
   row_size.times do |n|
     arr_size.times do |a|
-      res[n][a] = mtx[count][n]  # quite stuck, read up on multi-dim arrays
+
       count-=1
     end
+    res << temp
     count = arr_size-1
   end
   res

@@ -1,4 +1,4 @@
-# def one_k_lights
+# def hey_1000_lights
 # end
 
 
@@ -33,3 +33,5 @@
 # end
 
 # diamond 13
+
+# finished

@@ -1,58 +1,21 @@
-# def n(a)
-#   #
-# end
 
-# def PUSH(a)
-#   stack.push(a)
-# end
-
-# def ADD
-#   reg += stack.pop
-# end
-
-# def SUB
-#   reg -= stack.pop
-# end
-
-# def MULT
-#   reg *= stack.pop
-# end
-
-# def DIV
-#   reg /= stack.pop
-# end
-
-# def MOD
-#   reg %= stack.pop
-# end
-
-# def POP
-#   reg = stack.pop
-# end
-
-# def PRINT
-#   puts reg
-# end
-
-# stack = []
-# reg = 0
-# x = 0
 
 # def minilang(str)
+#   stack = []
+#   reg = 0
 #   prog = str.split(' ')
 
 #   prog.each do |a|
 #     case a
-#     when 'n'; n(x)
-#     when 'PUSH'; n(x)
-#     when 'ADD'; ADD
-#     when 'SUB'; SUB
-#     when 'MULT'; MULT
-#     when 'DIV'; DIV
-#     when 'MOD'; MOD
-#     when 'POP'; POP
-#     when 'PRINT'; PRINT.call
-#     else x = a.to_i
+#     when 'PUSH'; stack << reg
+#     when 'ADD'; reg += stack.pop
+#     when 'SUB'; reg -= stack.pop
+#     when 'MULT'; reg *= stack.pop
+#     when 'DIV'; reg /= stack.pop
+#     when 'MOD'; reg %= stack.pop
+#     when 'POP'; reg = stack.pop
+#     when 'PRINT'; puts reg
+#     else reg = a.to_i
 #     end
 #   end
 # end

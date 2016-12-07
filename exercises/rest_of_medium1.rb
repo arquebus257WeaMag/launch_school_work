@@ -14,9 +14,11 @@
 # end
 
 # def word_to_digit(str)
+#   res=''
 #   str_arr = str.split(' ')
 #   result = str_arr.map do |a|
 #     if check_num a
+#       "#{res}#{a.scan(/[^\w+]/)}"
 #       check_num a
 #     else
 #       a
@@ -50,18 +52,18 @@
 # # cheated, looked at answer
 
 
-def fibonacci(num)
-  answer=1
-  temp1=temp2=1
-  (num-2).times do |a|
-    answer = answer + temp2
-    temp2 = temp1
-    temp1 = answer
-  end
-  answer
-end
+# def fibonacci(num)
+#   answer=1               # <-- here is reason, answer=1
+#   temp1=temp2=1
+#   (num-2).times do |a|          # <-- num-2
+#     answer = answer + temp2
+#     temp2 = temp1
+#     temp1 = answer
+#   end
+#   answer
+# end
 
-#finished correctly, still need to know why (num-2) instead of just num
+# # finished correctly, still need to know why (num-2) instead of just num
 
 # p  fibonacci(20) == 6765
 # p  fibonacci(100) == 354224848179261915075
@@ -73,15 +75,16 @@ end
 
 
 # def fibonacci_last(num)
-#   answer=1
+#   answer=0
 #   temp1=temp2=1
-#   (num-2).times do |a|
+#   (num-1).times do |a|
 #     answer = answer + temp2
 #     temp2 = temp1
 #     temp1 = answer
 #   end
-#   result = answer.to_s.split('')
-#   result[-1]
+#   x = answer.to_s
+#   y = x[-1]
+#   y.to_i
 # end
 
 
@@ -94,3 +97,6 @@ end
 # p fibonacci_last(100_001)   # -> 1 (this is a 20899 digit number)
 # p fibonacci_last(1_000_007) # -> 3 (this is a 208989 digit number)
 # p fibonacci_last(123456789) # -> 4
+
+
+# finished correctly

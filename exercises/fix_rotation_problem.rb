@@ -60,29 +60,29 @@ def rotate_rightmost_digits(number, n)
   all_digits.join.to_i
 end
 
-# def max_rotation(num)
-#   num_arr = num.to_s.split('')
-#   curr_size = arr_size = num_arr.size
+def max_rotation(num)
+  num_arr = num.to_s.split('')
+  curr_size = arr_size = num_arr.size
 
-#   arr_size.times do |a|
-#     dig_num = num_arr.join.to_i
-#     puts "dig_num #{dig_num}"
-#     dig_num = rotate_rightmost_digits(dig_num,a)
-#     num_arr = dig_num.to_s.split('')
-#     puts "num_arr #{num_arr}"
-#     break unless a < arr_size - 2
-#     puts "num_arr chopped #{num_arr}"
-#   end
-#   num_arr.join.to_i
-# end
-
-def max_rotation(number)
-  number_digits = number.to_s.size
-  number_digits.downto(2) do |n|
-    number = rotate_rightmost_digits(number, n)
+  arr_size.times do |a|
+    dig_num = num_arr.join.to_i
+    puts "dig_num #{dig_num}"
+    dig_num = rotate_rightmost_digits(dig_num,a)  # <-- here
+    num_arr = dig_num.to_s.split('')
+    puts "num_arr #{num_arr}"
+    break unless a < arr_size - 2    # a counter assumes 0 still exists
+    puts "num_arr chopped #{num_arr}"
   end
-  number
+  num_arr.join.to_i
 end
+
+# def max_rotation(number)
+#   number_digits = number.to_s.size
+#   number_digits.downto(2) do |n|
+#     number = rotate_rightmost_digits(number, n)
+#   end
+#   number
+# end
 
 # p max_rotation(735291) == 321579
 # p max_rotation(3) == 3
