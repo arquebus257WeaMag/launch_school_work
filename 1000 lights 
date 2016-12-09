@@ -1,0 +1,23 @@
+
+switch_numbers = (1..1000).to_a
+switch_states = {}
+
+switch_numbers.each do |number|
+   switch_states[number] = 'off' 
+end
+
+switch_numbers.each do |round_number|
+   switch_states.each do |switch_number, on_or_off|
+       if switch_number % round_number == 0
+          if on_or_off == 'on'
+              switch_states[switch_number] = 'off'
+          else
+             switch_states[switch_number] = 'on' 
+          end
+       end
+   end
+end
+
+p switch_states.select {|key, value| value == 'on'}.keys
+
+

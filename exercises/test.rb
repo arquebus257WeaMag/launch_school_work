@@ -1,7 +1,6 @@
-b=[]
-x=(3..1).to_a
-puts x
-x.each do |a|
-  b << a
-  puts 'hi'
+A= Object.new
+class a
+  def initialize(b)
+    @b = b
+  end
 end
