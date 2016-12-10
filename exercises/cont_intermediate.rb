@@ -1,5 +1,29 @@
-# def hey_1000_lights
+# def k_lights
+#   lights=[]
+#   1000.times do |a|
+#     lights[a] = 'on'
+#   end
+
+#   count=0
+#   iter=2
+#   jump=1
+#   while count < lights.size
+#     while jump < lights.size
+#       if lights[jump] == 'on'
+#         lights[jump] = 'off'
+#       else
+#         lights[jump] = 'on'
+#       end
+#       jump+=iter
+#     end
+#     iter+=1
+#     jump=iter-1
+#     count+=1
+#   end
+
+#   lights
 # end
+# p k_lights
 
 
 
