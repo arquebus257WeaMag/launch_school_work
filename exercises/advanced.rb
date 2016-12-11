@@ -103,15 +103,15 @@
 def rotate90(mtx)
   arr_size = mtx.size
   row_size = mtx[0].size
-  temp=res=[]
-  count = arr_size-1
-  row_size.times do |n|
-    arr_size.times do |a|
+  res = []
+  count =  arr_size - 1
+  row_size.times{|b| res << []}
 
-      count-=1
+  arr_size.times do
+    row_size.times do |a|
+      res[a] << mtx[count][a]
     end
-    res << temp
-    count = arr_size-1
+    count-=1
   end
   res
 end
@@ -133,6 +133,6 @@ new_matrix1 = rotate90(matrix1)
 new_matrix2 = rotate90(matrix2)
 new_matrix3 = rotate90(rotate90(rotate90(rotate90(matrix2))))
 
-p new_matrix1 #== [[3, 4, 1], [9, 7, 5], [6, 2, 8]]
-p new_matrix2 #== [[5, 3], [1, 7], [0, 4], [8, 2]]
-p new_matrix3 #== matrix2
+p new_matrix1 == [[3, 4, 1], [9, 7, 5], [6, 2, 8]]
+p new_matrix2 == [[5, 3], [1, 7], [0, 4], [8, 2]]
+p new_matrix3 == matrix2
