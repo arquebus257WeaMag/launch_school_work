@@ -1,35 +1,35 @@
-require 'pry-byebug'
+require 'pry'
 
 class GoL
 
-  def create_board
-    board_array = []
-    20.times do |a|
-      board_array << Array.new(20, ' . ')
-    end
-    board_array
-  end
+  # def create_empty_board(n)
+  #   board_array = []
+  #   n.times do |a|
+  #     board_array << Array.new(n, ' . ')
+  #   end
+  #   board_array
+  # end
 
   def display_board(board_array)
-    display_array = []
-    board_array.each{|a| display_array << a.join}
-    display_string = display_array.join("\n")
-    binding.pry # PRY HERE
+    result_array=[]
+    board_array.map{|a| result_array << a.join('')}
+    result_array.join("\n")
   end
 
-  def create_random_cells(brd) # redo using map
-    result_array = []
-    brd.each do |a|
-      temp_arr = a.map do |b|
+  def create_random_board(n)
+    result_array = temp_arr = []
+    n.times do |a|
+      temp_arr=[]
+      n.times do |b|
         if rand(10) > 7
-          ' X '
+          temp_arr << ' X '
         else
-          ' . '
+          temp_arr << ' . '
         end
       end
-      result_array << temp_arr
+      result_array << temp_arr.join('')
     end
-    result_array
+    str = result_array.join("\n")
   end
 
   def create_occupied_cell_array(brd)
@@ -78,13 +78,10 @@ class GoL
 
   def run_game
     loop do
-      global_board = create_random_cells(create_board)
-      live_cell_array = create_occupied_cell_array(global_board)
+      puts create_random_board(5)
 
-      puts display_board(remove_dead_cells(global_board, live_cell_array))
-
-      # puts display_board(create_random_cells(create_board))
-
+      puts
+      puts
       sleep(1)
     end
   end
